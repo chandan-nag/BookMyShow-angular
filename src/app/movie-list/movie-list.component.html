@@ -1,0 +1,7 @@
+<div class="container mt-3">
+<div class="row">
+    <div *ngFor="let pd of service.list" class="col-sm-3">
+        <app-movie-card [Movie]="pd" [MovieId]="pd.id"></app-movie-card>
+    </div>
+</div>
+</div>

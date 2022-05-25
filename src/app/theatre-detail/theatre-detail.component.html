@@ -1,0 +1,37 @@
+<div class="container card detail-style">
+    <h1><span>Book your tickets for:</span>-- {{movielistservice.MovieName}}</h1>
+    <div *ngFor="let t of theatreservice.list">
+        <div class="m-4 cinema-style d-flex">
+                <h2 class="my-3">{{t.name}} :</h2>
+            <div class="d-flex justify-content-around w-70">
+                <button (click)="ShowClick(1,t.id)" class="btn btn-dark show" type="button" data-toggle="modal" data-target="#exampleModal" >9:00 AM</button>
+                <button (click)="ShowClick(2,t.id)"class="btn btn-dark show" type="button" data-toggle="modal" data-target="#exampleModal">2:00 PM</button>
+                <button (click)="ShowClick(3,t.id)"class="btn btn-dark show" type="button" data-toggle="modal" data-target="#exampleModal">5:00 PM</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">TICKET DETAILS</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <h5>Tickets Available: {{ticketservice.TicketAvailable}}</h5>
+            <h5>Ticket price: 200</h5>
+            <label>Enter the No. of Tickets:</label>
+            <input type="number" name="number" placeholder="Enter Tickets" id="tickets">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" data-dismiss="modal" (click)="BookTicket()">Book Tickets</button>
+        </div>
+      </div>
+    </div>
+  </div>

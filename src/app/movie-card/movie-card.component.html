@@ -1,0 +1,9 @@
+
+<div class="card bg-secondary" style="width: 18rem;">
+    <img src="assets/{{Movie.imagePath}}" class="card-img-top" alt="...">
+    <div class="card-body text-center">
+      <h2 class="card-text">{{Movie.name}}</h2>
+      <h5 class="card-text">GENRE-{{Movie.genre}}</h5>
+      <a href="#" class="btn btn-primary card-link" [routerLink]="['/theatre',Movie.id]">View Theatres</a>
+    </div>
+  </div>

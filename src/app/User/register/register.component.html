@@ -1,0 +1,36 @@
+<div class="card p-3 mt-3 col-md-4 offset-md-4">
+    <div>
+        <form  #registerform="ngForm" (submit)="onSubmit(registerform)">
+            <div class="form-group">
+                <label>Name</label>
+                <input required class="form-control" placeholder="Name" name="Name" #Name="ngModel" [(ngModel)]="service.formRegisterData.name">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input required class="form-control" placeholder="Age" name="Age" #Age="ngModel" [(ngModel)]="service.formRegisterData.age">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <input required class="form-control" placeholder="Gender" name="Gender" #Gender="ngModel" [(ngModel)]="service.formRegisterData.Gender">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input required class="form-control" placeholder="Email" name="Email" #Email="ngModel" [(ngModel)]="service.formRegisterData.email">
+            </div>
+            <div class="form-goup">
+                <label>Password</label>
+                <input required maxlength="10" minlength="8"  class="form-control" placeholder="Password" name="Password" #Password="ngModel" [(ngModel)]="service.formRegisterData.password">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-danger mt-3" [disabled]="registerform.invalid" type="submit">Register</button>
+            </div>
+
+        </form>
+    </div>
+</div>
