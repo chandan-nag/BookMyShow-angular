@@ -17,6 +17,7 @@ MovieName:string;
 ShowId:number;
 TheatreId:number;
 Seats:number;
+Tickets:number;
   constructor(private http:HttpClient,private route:ActivatedRoute,public movielistservice:MovieListService,
      public theatreservice:TheatreDetailService,public ticketservice:TicketDetailService,private router:Router) { }
 
@@ -41,10 +42,11 @@ Seats:number;
     BookTicket()
     {
       let n=parseInt((document.getElementById("tickets") as HTMLInputElement).value);
-      console.log(n);
+      //console.log(n);
+      this.Tickets=n;
       this.ticketservice.bookTickets(this.id,this.TheatreId,this.ShowId,n);
       alert("tickets booked");
-      //this.router.navigateByUrl('/seat');
+      this.router.navigateByUrl('/seatmodule/seat');
     }
 
 

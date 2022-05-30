@@ -5,6 +5,7 @@ import { MovieListService } from 'src/app/shared/movie-list.service';
 
 import { LoginDetailService } from 'src/app/shared/login-detail.service';
 import { Login } from 'src/app/models/login.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   
 
 
-  constructor(public service:LoginDetailService,public movielist:MovieListService) { }
+  constructor(public service:LoginDetailService,public movielist:MovieListService,public route:Router) { }
 
   ngOnInit(): void {
   }
@@ -33,6 +34,7 @@ export class LoginComponent implements OnInit {
          return;
        }
        this.movielist.logeduserdetail=data;
+       this.route.navigate(["/"])
      }
    )
   }

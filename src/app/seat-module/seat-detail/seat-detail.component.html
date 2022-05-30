@@ -1,0 +1,15 @@
+<div class="m-4 p-2 bg-dark col-md-4 offset-md-4">
+<div class="card bg-success p-3 ">
+    <div class="d-flex flex-row-reverse bd-highlight">
+    <button type="button" class="btn-close"  aria-label="Close" (click)="onclick()"></button>
+</div>
+    <h4>Number of Tickets booked:&nbsp;{{service.Tickets}}</h4>
+    <h4>Number of Tickets Available:&nbsp;{{service.TicketAvailable - service.Tickets}}</h4>
+    <div class="d-flex">
+    <h4>Seat Numbers:</h4>
+    <div *ngFor="let data of arr">
+        <h4 class="px-2">{{data}}</h4>
+    </div>
+</div>
+</div>
+</div>

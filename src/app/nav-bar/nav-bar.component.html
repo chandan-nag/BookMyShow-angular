@@ -25,7 +25,7 @@
           <a href="" class="btn btn-primary" style="color:aliceblue" routerLink="/register" routerLinkActive="active">Register</a>
         </div>
         <div *ngIf="movielist.logeduserdetail!==null" class="d-flex justify-content-between">
-          <a href="" class="mx-3" style="color:aliceblue">{{movielist.logeduserdetail.name}}</a>
+          <a  class="mx-3" style="color:aliceblue" routerLink="/">{{movielist.logeduserdetail.name}}</a>
           <a href="" style="color:aliceblue" (click)="LogOut()" >LogOut</a>
         </div>
       </div>
